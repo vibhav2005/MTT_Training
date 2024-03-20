@@ -1,1 +1,0 @@
-"./led_blink.obj" "./tm4c123gh6pge_startup_ccs.obj" "../001_led_on/Debug/main.obj" "../001_led_on/Debug/tm4c123gh6pge_startup_ccs.obj" "./001_led_on/led_on.obj" "./001_led_on/tm4c123gh6pge_startup_ccs.obj" "../tm4c123gh6pge.cmd" "../001_led_on/tm4c123gh6pge.cmd" -llibc.a 
