@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./led_on.obj" \
+"./main.obj" \
 "./tm4c123gh6pge_startup_ccs.obj" \
 "../tm4c123gh6pge.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -121,41 +121,41 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-001_led_on.out \
+003_led_hit_switch.out \
 
 EXE_OUTPUTS__QUOTED += \
-"001_led_on.out" \
+"003_led_hit_switch.out" \
 
 BIN_OUTPUTS += \
-001_led_on.hex \
+003_led_hit_switch.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"001_led_on.hex" \
+"003_led_hit_switch.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "001_led_on.out"
+	@$(MAKE) --no-print-directory -Onone "003_led_hit_switch.out"
 
 # Tool invocations
-001_led_on.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+003_led_hit_switch.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PGE -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"001_led_on.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="001_led_on_linkInfo.xml" --rom_model -o "001_led_on.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PGE -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"003_led_hit_switch.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/lib" -i"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="003_led_hit_switch_linkInfo.xml" --rom_model -o "003_led_hit_switch.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-001_led_on.hex: $(EXE_OUTPUTS)
+003_led_hit_switch.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
-	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/bin/armhex"  -o "001_led_on.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/bin/armhex"  -o "003_led_hit_switch.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "led_on.obj" "tm4c123gh6pge_startup_ccs.obj" 
-	-$(RM) "led_on.d" "tm4c123gh6pge_startup_ccs.d" 
+	-$(RM) "main.obj" "tm4c123gh6pge_startup_ccs.obj" 
+	-$(RM) "main.d" "tm4c123gh6pge_startup_ccs.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
