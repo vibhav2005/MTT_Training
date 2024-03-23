@@ -12,6 +12,3 @@ int main(void)
 }
 
 
-//if( (GPIO_PORTG_DATA_R&0x80)!=0){
- //         GPIO_PORTG_DATA_R|= 0x01;}
-  //    else{GPIO_PORTG_DATA_R &= ~(0x01)  ;}
